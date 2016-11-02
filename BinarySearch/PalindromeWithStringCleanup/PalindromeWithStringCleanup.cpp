@@ -7,18 +7,20 @@
 
 using namespace std;
 
-string& cleanUpString(string& iStr) {
-	
-	string retStr = iStr;
-	retStr.erase(remove_if(iStr.begin(), iStr.end(), [](auto c)->bool {return !isalpha(c); }));
-	return retStr;
+void cleanUpString(string& iStr) {	
+	iStr.erase(remove_if(iStr.begin(), iStr.end(), [](auto c) {return !isalpha(c); }), iStr.end());
+	transform(iStr.begin(), iStr.end(), iStr.begin(), ::tolower);
 }
 
 
 
 bool IsPalindrome(const string& iStr) {
-	for (int ii = 0, jj = iStr.length() - 1; ii < iStr.length()/2; ii++, jj--) {
-		if (iStr[ii] != iStr[jj])
+
+	string str(iStr);
+	cleanUpString(str);
+
+	for (int ii = 0, jj = str.length() - 1; ii <(int) str.length()/2; ii++, jj--) {
+		if (str[ii] != str[jj])
 			return false;
 	}
 	return true;
@@ -27,7 +29,7 @@ bool IsPalindrome(const string& iStr) {
 int main()
 {
 	string str("D  AD");
-	bool ok = IsPalindrome(cleanUpString(str));
+	bool ok = IsPalindrome(str);
 	return 0;
 }
 

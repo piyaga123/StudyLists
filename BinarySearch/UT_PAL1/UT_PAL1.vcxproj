@@ -75,7 +75,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\BinarySearch;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)PalindromeWithStringCleanup;$(SolutionDir)BinarySearch;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -170,6 +170,9 @@
   <ItemGroup>
     <ProjectReference Include="..\BinarySearch\BinarySearch.vcxproj">
       <Project>{2e46d5c2-2dfa-45b6-9b42-694348398a42}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PalindromeWithStringCleanup\PalindromeWithStringCleanup.vcxproj">
+      <Project>{d2210c4e-9313-43f2-822a-60041b36bc3d}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

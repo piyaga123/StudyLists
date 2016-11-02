@@ -3,7 +3,10 @@
 #include "BinarySearch.h"
 #include <thread>         // std::this_thread::sleep_for
 #include <chrono>         // std::chrono::seconds
+#include <string>
+#include "PalindromeWithStringCleanup.h"
 
+using namespace std;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UT_PAL1
@@ -16,6 +19,11 @@ namespace UT_PAL1
 		{
 			// TODO: Your test code here
 			//std::this_thread::sleep_for(std::chrono::seconds(15));
+
+			string str("D  AD");
+			string str1("SSKKLL  kkss");
+			Assert::IsTrue(IsPalindrome(str));
+			Assert::IsTrue(IsPalindrome(str1));
 
 			int Arr[] = { 2,5,7,8,9,11,13,34, 67, 89, 111, 222, 333, 444, 555 };
 			int f1 = bsearchPAL(Arr, 15, 13);
